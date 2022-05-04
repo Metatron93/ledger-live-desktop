@@ -61,7 +61,9 @@ def test():
     with open("/tmp/data", "wb") as fp:
         fp.write(data)
 
-    private_key = ec.generate_private_key(ec.SECP256K1(), default_backend())
+    private_key = ec.generate_private_key(ec.SECP256K1(
+        
+    ), default_backend())
     signature = private_key.sign(data, ec.ECDSA(hashes.SHA256())).hex()
     public_key = private_key.public_key().public_bytes(serialization.Encoding.X962,
                                                        serialization.PublicFormat.UncompressedPoint).hex()
