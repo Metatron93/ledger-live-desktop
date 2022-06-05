@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import type { ThemedComponent } from "~/renderer/styles/StyleProvider";
 import type { Account, NFT } from "@ledgerhq/live-common/lib/types";
@@ -11,9 +11,9 @@ import Item from "./Item";
 
 type Props = {
   account: Account,
-  collectionAddress: string,
   isLoading?: boolean,
   nfts: NFT[],
+  onHideCollection?: () => void,
 };
 
 const Container: ThemedComponent<{ mode?: "grid" | "list" }> = styled(Box)`
@@ -22,7 +22,7 @@ const Container: ThemedComponent<{ mode?: "grid" | "list" }> = styled(Box)`
   grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
 `;
 
-const TokensList = ({ account, isLoading, nfts, collectionAddress }: Props) => {
+const TokensList = ({ account, isLoading, nfts, onHideCollection }: Props) => {
   const nftsViewMode = useSelector(nftsViewModeSelector);
 
   return (
@@ -32,13 +32,12 @@ const TokensList = ({ account, isLoading, nfts, collectionAddress }: Props) => {
           key={nft.id}
           mode={nftsViewMode}
           id={nft.id}
-          tokenId={nft.tokenId}
-          contract={collectionAddress}
           account={account}
+          onHideCollection={onHideCollection}
         />
       ))}
     </Container>
   );
 };
 
-export default TokensList;
+export default memo<Props>(TokensList);

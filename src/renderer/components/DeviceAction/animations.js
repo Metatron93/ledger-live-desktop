@@ -30,6 +30,10 @@ const nanoS = {
     light: require("~/renderer/animations/nanoS/2FirmwareUpdating/light.json"),
     dark: require("~/renderer/animations/nanoS/2FirmwareUpdating/dark.json"),
   },
+  installLoading: {
+    light: require("~/renderer/animations/nanoS/8InstallLoading/light.json"),
+    dark: require("~/renderer/animations/nanoS/8InstallLoading/dark.json"),
+  },
 };
 const nanoX = {
   plugAndPinCode: {
@@ -59,6 +63,10 @@ const nanoX = {
   firmwareUpdating: {
     light: require("~/renderer/animations/nanoX/2FirmwareUpdating/light.json"),
     dark: require("~/renderer/animations/nanoX/2FirmwareUpdating/dark.json"),
+  },
+  installLoading: {
+    light: require("~/renderer/animations/nanoX/8InstallLoading/light.json"),
+    dark: require("~/renderer/animations/nanoX/8InstallLoading/dark.json"),
   },
 };
 
@@ -91,6 +99,45 @@ const nanoSP = {
     light: require("~/renderer/animations/nanoSP/2FirmwareUpdating/light.json"),
     dark: require("~/renderer/animations/nanoSP/2FirmwareUpdating/dark.json"),
   },
+  installLoading: {
+    light: require("~/renderer/animations/nanoSP/8InstallLoading/light.json"),
+    dark: require("~/renderer/animations/nanoSP/8InstallLoading/dark.json"),
+  },
+};
+
+const nanoFTS = {
+  plugAndPinCode: {
+    light: require("~/renderer/animations/nanoS/1PlugAndPinCode/light.json"),
+    dark: require("~/renderer/animations/nanoS/1PlugAndPinCode/dark.json"),
+  },
+  enterPinCode: {
+    light: require("~/renderer/animations/nanoS/3EnterPinCode/light.json"),
+    dark: require("~/renderer/animations/nanoS/3EnterPinCode/dark.json"),
+  },
+  quitApp: {
+    light: require("~/renderer/animations/nanoS/4QuitApp/light.json"),
+    dark: require("~/renderer/animations/nanoS/4QuitApp/dark.json"),
+  },
+  allowManager: {
+    light: require("~/renderer/animations/nanoS/5AllowManager/light.json"),
+    dark: require("~/renderer/animations/nanoS/5AllowManager/dark.json"),
+  },
+  openApp: {
+    light: require("~/renderer/animations/nanoS/6OpenApp/light.json"),
+    dark: require("~/renderer/animations/nanoS/6OpenApp/dark.json"),
+  },
+  validate: {
+    light: require("~/renderer/animations/nanoS/7Validate/light.json"),
+    dark: require("~/renderer/animations/nanoS/7Validate/dark.json"),
+  },
+  firmwareUpdating: {
+    light: require("~/renderer/animations/nanoS/2FirmwareUpdating/light.json"),
+    dark: require("~/renderer/animations/nanoS/2FirmwareUpdating/dark.json"),
+  },
+  installLoading: {
+    light: require("~/renderer/animations/nanoS/8InstallLoading/light.json"),
+    dark: require("~/renderer/animations/nanoS/8InstallLoading/dark.json"),
+  },
 };
 
 const blue = {
@@ -117,9 +164,13 @@ const blue = {
     light: require("~/renderer/animations/nanoS/2FirmwareUpdating/light.json"),
     dark: require("~/renderer/animations/nanoS/2FirmwareUpdating/dark.json"),
   },
+  installLoading: {
+    light: require("~/renderer/animations/nanoS/8InstallLoading/light.json"),
+    dark: require("~/renderer/animations/nanoS/8InstallLoading/dark.json"),
+  },
 };
 
-const animations = { nanoX, nanoS, nanoSP, blue };
+const animations = { nanoX, nanoS, nanoSP, nanoFTS, blue };
 
 type InferredKeys = $Keys<typeof nanoS>;
 
