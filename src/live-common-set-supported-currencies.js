@@ -18,6 +18,7 @@ setSupportedCurrencies([
   "dogecoin",
   "cosmos",
   "crypto_org",
+  "celo",
   "dash",
   "tron",
   "tezos",
@@ -38,5 +39,6 @@ setSupportedCurrencies([
   "stakenet",
   "bitcoin_testnet",
   "ethereum_ropsten",
+  "ethereum_goerli",
   "cosmos_testnet",
 ]);

@@ -7,9 +7,9 @@ export class MarketPage {
   readonly marketRangeSelect: Locator;
   readonly filterDrawerButton: Locator;
   readonly starFilterButton: Locator;
-  readonly sortButton: Locator;
   readonly loadingPlaceholder: Locator;
   readonly coinRow: Function;
+  readonly coinPageContainer: Locator;
   readonly starButton: Function;
   readonly buyButton: Function;
   readonly swapButton: Function;
@@ -21,9 +21,9 @@ export class MarketPage {
     this.marketRangeSelect = page.locator("data-test-id=market-range-select");
     this.filterDrawerButton = page.locator("data-test-id=market-filter-drawer-button");
     this.starFilterButton = page.locator("data-test-id=market-star-button");
-    this.sortButton = page.locator("data-test-id=market-sort-button");
     this.loadingPlaceholder = page.locator("data-test-id=loading-placeholder");
     this.coinRow = (ticker: string): Locator => page.locator(`data-test-id=market-${ticker}-row`);
+    this.coinPageContainer = page.locator(`data-test-id=market-coin-page-container`);
     this.starButton = (ticker: string): Locator =>
       page.locator(`data-test-id=market-${ticker}-star-button`);
     this.buyButton = (ticker: string): Locator =>
@@ -38,10 +38,6 @@ export class MarketPage {
 
   async openFilterDrawer() {
     await this.filterDrawerButton.click();
-  }
-
-  async toggleInvertSort() {
-    await this.sortButton.click();
   }
 
   async switchCountervalue(ticker: string) {
@@ -62,6 +58,7 @@ export class MarketPage {
 
   async openCoinPage(ticker: string) {
     await this.coinRow(ticker).click();
+    await this.coinPageContainer.waitFor({ state: "attached" });
   }
 
   async starCoin(ticker: string) {

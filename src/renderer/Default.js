@@ -31,7 +31,6 @@ import OnboardingOrElse from "~/renderer/components/OnboardingOrElse";
 import AppRegionDrag from "~/renderer/components/AppRegionDrag";
 import IsNewVersion from "~/renderer/components/IsNewVersion";
 import IsSystemLanguageAvailable from "~/renderer/components/IsSystemLanguageAvailable";
-import LibcoreBusyIndicator from "~/renderer/components/LibcoreBusyIndicator";
 import DeviceBusyIndicator from "~/renderer/components/DeviceBusyIndicator";
 import KeyboardContent from "~/renderer/components/KeyboardContent";
 import PerfIndicator from "~/renderer/components/PerfIndicator";
@@ -60,6 +59,8 @@ import Market from "~/renderer/screens/market";
 import MarketCoinScreen from "~/renderer/screens/market/MarketCoinScreen";
 // $FlowFixMe
 import Learn from "~/renderer/screens/learn";
+
+import { useProviders } from "~/renderer/screens/exchange/Swap2/Form";
 
 export const TopBannerContainer: ThemedComponent<{}> = styled.div`
   position: sticky;
@@ -119,6 +120,8 @@ export default function Default() {
   const ref: React$ElementRef<any> = useRef();
   useDeeplink();
   useUSBTroubleshooting();
+
+  useProviders(); // prefetch data from swap providers here
 
   // every time location changes, scroll back up
   useEffect(() => {
@@ -228,7 +231,6 @@ export default function Default() {
 
                   {__NIGHTLY__ ? <NightlyLayer /> : null}
 
-                  <LibcoreBusyIndicator />
                   <DeviceBusyIndicator />
                   <KeyboardContent sequence="BJBJBJ">
                     <PerfIndicator />

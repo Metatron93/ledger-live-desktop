@@ -11,6 +11,8 @@ export const supportLinkByTokenType = {
     "https://support.ledger.com/hc/en-us/articles/360013062159?utm_source=ledger_live_desktop&utm_medium=self_referral&utm_content=receive_account_flow",
   asa:
     "https://support.ledger.com/hc/en-us/articles/360015896040?utm_source=ledger_live_desktop&utm_medium=self_referral&utm_content=receive_account_flow",
+  nfts:
+    "https://support.ledger.com/hc/en-us/articles/4404389453841-Receive-crypto-assets?utm_medium=self_referral&utm_content=receive_account_flow",
 };
 
 export const urls = {
@@ -209,6 +211,8 @@ export const urls = {
     website: "https://elrond.com",
   },
   solana: {
+    staking: "https://support.ledger.com/hc/en-us/articles/4731749170461?docs=true",
     recipient_info: "https://support.ledger.com",
+    ledgerByFigmentTC: "https://drive.google.com/file/d/1vlIh2gTwtbMon8_bzFQGjCLhTUqS5uQc",
   },
 };
